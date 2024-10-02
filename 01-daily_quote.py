@@ -14,16 +14,21 @@ Hint: Look up `random.choice()` to select a random item from a list. You can use
 import random
 from datetime import date
 
-
 quotes = [
-    # Create a list of quotes here
+    'Never spend 5 hours on a manual task that you could spend 5 days failing to automate.',
+    'When you are dead, you dont know that you are dead.',
+    'A wise man can change his mind.',
+    'Cauliflower is nothing but cabbage with a college education.',
+    "'I didnt say half the things people say I did.' -Albert Einstein",
+    'Everybody has a plan until they get punched in the mouth'
 ]
+
 
 def get_quote_of_the_day(quotes):
     todays_quote = None
-
-    # Your code here
-    
+    seed = str(date.today())
+    random.seed(seed)
+    todays_quote = random.choice(quotes)
     return todays_quote
 
 if __name__ == "__main__":
